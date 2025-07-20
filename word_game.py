@@ -26,7 +26,7 @@ def play_game():
     global wins, losses
 
     print("\nChoose a category:")
-    categories = list(word_bank.keys())
+    categories = sorted(list(word_bank.keys()))
     for i in range(len(categories)):
         print(f"{i+1}. {categories[i]}")
 
@@ -129,8 +129,7 @@ while True:
     if replay != "yes":
         print(f"\n Thanks for playing, {player_name}!")
         print(f" Final Score: {wins} Wins, {losses} Losses")
-        
+
         save_score(player_name, wins, losses)
         show_leaderboard()
         break
-         
